@@ -7,7 +7,7 @@ function App() {
 
   const shortenUrl = async () => {
     try {
-      const response = await fetch('http://localhost:3001/shorten', {
+      const response = await fetch('https://url-shortener-zksz.onrender.com/shorten', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ function App() {
   };
 
   const copyToClipboard = () => {
-    const completeShortUrl = `http://localhost:3001/${shortUrl}`;
+    const completeShortUrl = `https://url-shortener-zksz.onrender.com/${shortUrl}`;
     const textField = document.createElement('textarea');
     textField.innerText = completeShortUrl;
     document.body.appendChild(textField);
@@ -45,7 +45,7 @@ function App() {
       </div>
       {shortUrl && (
         <div>
-          <p>Short URL: <a href={`http://localhost:3001/${shortUrl}`} target="_blank" rel="noopener noreferrer">{shortUrl}</a></p>
+          <p>Short URL: <a href={`https://url-shortener-zksz.onrender.com/${shortUrl}`} target="_blank" rel="noopener noreferrer">{shortUrl}</a></p>
           <button onClick={copyToClipboard}>Copy Short URL</button>
           {isCopied && <p>Short URL copied to clipboard!</p>}
         </div>
